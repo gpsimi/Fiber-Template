@@ -451,7 +451,7 @@ Diversity Section
 .testimonial-section .container {
   display: grid;
   margin: 0;
-  /*grid-template-columns: 35% 35% 35%;*/
+  grid-template-columns: 35% 35% 35%;
   overflow-x: scroll;
   grid-column-gap: 30px;
   grid-row-gap: 20px;
