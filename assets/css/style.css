@@ -59,10 +59,105 @@ p {
   line-height: 27px;
 }
 
+/* Animation for Mobile Navigation */
+@keyframes slide-in {
+  0% {
+    transform: translateX(300px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-out {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(300px);
+  }
+}
+.slide-in {
+  animation: slide-in 500ms ease;
+}
+
+.slide-out {
+  animation: slide-out 500ms ease;
+}
+
+/* Mobile Navigation */
+.display-none {
+  display: none;
+}
+.mobile-bg {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.7);
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+.mobile-bg img {
+  position: absolute;
+  margin: 20px 0 0 20px;
+}
+.mobile-bg ul {
+  position: absolute;
+  padding: 40px;
+  width: 300px;
+  right: 0;
+  background-color: rgba(0, 123, 255, 0.7);
+  height: 100%;
+}
+.mobile-bg li {
+  padding: 10px 0;
+}
+.mobile-bg a {
+  color: #fff;
+  font-weight: 500;
+}
+.mobile-bg hr {
+  margin: 30px 0;
+}
+.mobile-bg .button {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  padding: 10px 0;
+  gap: 10px;
+}
+.mobile-bg .button .btn {
+  cursor: pointer;
+  width: 150px;
+  color: #4D13D1;
+  background-color: #fff;
+  border-radius: 5px;
+  border: 2px solid #fff;
+  padding: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  flex-direction: column;
+}
+.mobile-bg .button .btn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+.mobile-bg .button .button .btn {
+  text-align: center;
+  width: 200px;
+  margin: 16px 0px;
+}
+
+/* PC Navigation */
 header {
   height: 89px;
   padding: 5px 6%;
   background-color: #FBF8F3;
+}
+@media (max-width: 1000px) {
+  header {
+    position: fixed;
+    width: 100%;
+    height: 80px;
+  }
 }
 header nav {
   display: flex;
@@ -115,13 +210,7 @@ header .btn:hover {
   color: #4D13D1;
 }
 header .button .btn {
-  text-align: center;
-  width: 100px;
-}
-@media (max-width: 1000px) {
-  header .button .btn {
-    display: none;
-  }
+  display: none;
 }
 header .btn-light {
   font-weight: 700;
@@ -155,6 +244,11 @@ Hero Section
   display: flex;
   justify-content: center;
   padding: 5px 6%;
+}
+@media (max-width: 1000px) {
+  .hero {
+    padding-top: 90px;
+  }
 }
 .hero .flex-row {
   padding: 0, 32px;
@@ -284,7 +378,7 @@ Hero Section
 }
 @media (max-width: 1000px) {
   .hero .hero-checkmark p {
-    font-size: 24px;
+    font-size: 18px;
   }
 }
 
@@ -475,6 +569,7 @@ Diversity Section
     grid-column-gap: 55px;
     grid-row-gap: 25px;
     padding: 10px 6% 10px 0%;
+    overflow-x: hidden;
   }
 }
 @media (max-width: 767px) {
@@ -485,6 +580,7 @@ Diversity Section
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-column-gap: 55px;
     grid-row-gap: 25px;
+    overflow-x: hidden;
   }
 }
 @media (max-width: 300px) {
@@ -495,6 +591,7 @@ Diversity Section
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-column-gap: 55px;
     grid-row-gap: 25px;
+    overflow-x: hidden;
   }
 }
 

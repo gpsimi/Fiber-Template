@@ -53,10 +53,133 @@ p{
     font-size: 18px;
     line-height: 27px;
 }
+
+/* Animation for Mobile Navigation */
+@keyframes slide-in{
+    0%{
+        transform: translateX(300px);
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+@keyframes slide-out{
+    0%{
+        transform: translateX(0);
+    }
+    100%{
+        transform: translateX(300px);
+    }
+}
+
+.slide-in{
+    animation: slide-in 500ms ease;
+}
+.slide-out{
+    animation: slide-out 500ms ease;
+}
+
+
+/* Mobile Navigation */
+
+.display-none {
+    display: none;
+    @media (max-width: 1000px) {
+        
+    }
+}
+
+.mobile-bg{
+    position: fixed;
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+
+    img{
+        position: absolute;
+        margin: 20px 0 0 20px;    
+        
+    }
+    ul{
+        position: absolute;
+        padding: 40px;
+        width: 300px;
+        right: 0;
+        background-color: rgba(0, 123, 255, 0.7);
+        height: 100%;
+    }
+
+    li{
+        padding: 10px 0;
+    }
+
+    a{
+        color: #fff;
+        font-weight: 500;
+        
+    }
+
+
+    hr{
+        margin: 30px 0;
+    }
+
+    .button{
+        display: flex;
+        flex-direction: column;
+        text-align: left;
+        padding: 10px 0;
+        gap: 10px;
+        
+       
+        
+        
+        .btn{
+            cursor: pointer;
+            width: 150px;
+            color: #4D13D1;
+            background-color: #fff;
+            border-radius: 5px;
+            border: 2px solid #fff;
+            padding: 10px;
+            font-weight: 700;
+            font-size: 15px;
+            flex-direction: column;
+            
+            &:hover{
+                background-color: transparent;
+                color: #fff;
+            }
+        }
+        
+        
+
+        .button .btn{
+            text-align: center;
+            width: 200px;
+            margin: 16px 0px;
+        }
+    }
+
+
+}
+
+ 
+/* PC Navigation */
+
+
 header{
     height: 89px;
     padding: 5px 6%;
     background-color: #FBF8F3;
+    @media (max-width: 1000px){
+        position: fixed;
+        width: 100%;
+        height: 80px;
+        
+    }
+    
 
     nav{
         display: flex;
@@ -64,6 +187,7 @@ header{
         padding: 25px 0;
         width: 100%;
         justify-content: space-between;
+        
     }
     ul li{
         display: inline-block;
@@ -110,11 +234,7 @@ header{
     }
     
     .button .btn{
-        text-align: center;
-        width: 100px;
-        @media (max-width: 1000px) {
-            display:none;
-        }
+        display:none;
     }
     .btn-light{
         font-weight: 700;
@@ -141,6 +261,8 @@ Hero Section
     width: 100%;
     padding-bottom: 100px;
     
+
+    
 }
 .flex-row{
     display: flex;
@@ -151,6 +273,9 @@ Hero Section
     display: flex;
     justify-content: center;
     padding: 5px 6%;
+    @media (max-width:1000px){
+        padding-top: 90px;
+    }
 
     .flex-row{
         padding: 0, 32px;
@@ -282,7 +407,7 @@ Hero Section
         p{
             padding: 0 25px 0 0;
             @media (max-width: 1000px) {
-                font-size: 24px;
+                font-size: 18px;
             }
         }
 
@@ -491,8 +616,8 @@ Diversity Section
             grid-template-columns: repeat(auto-fit, (minmax(400px, 1fr)));
             grid-column-gap: 55px;
             grid-row-gap: 25px;
-           
             padding: 10px 6% 10px 0%;
+            overflow-x: hidden;
         }
 
         @media (max-width: 767px) {
@@ -502,6 +627,7 @@ Diversity Section
             grid-template-columns: repeat(auto-fit, (minmax(300px, 1fr)));
             grid-column-gap: 55px;
             grid-row-gap: 25px;
+            overflow-x: hidden;
         }
         @media (max-width: 300px) {
             max-width: 100%;
@@ -510,6 +636,7 @@ Diversity Section
             grid-template-columns: repeat(auto-fit, (minmax(250px, 1fr)));
             grid-column-gap: 55px;
             grid-row-gap: 25px;
+            overflow-x: hidden;
         }
     }
 
