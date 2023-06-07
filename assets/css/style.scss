@@ -106,7 +106,7 @@ p{
         padding: 40px;
         width: 300px;
         right: 0;
-        background-color: rgba(0, 123, 255, 0.7);
+        background-color: rgba(0, 123, 255, 1);
         height: 100%;
     }
 
@@ -234,7 +234,11 @@ header{
     }
     
     .button .btn{
-        display:none;
+        text-align: center;
+        width: 100px;
+        @media (max-width: 1000px) {
+            display:none;
+        }
     }
     .btn-light{
         font-weight: 700;
